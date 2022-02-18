@@ -48,7 +48,9 @@ const Main = () => {
 						class='border-gradient-br-scissors-gray-50 
                 				gradient-border-4 rounded-full flex justify-center inline-flex 
 								items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24'
+                   				lg:w-32 lg:h-32 w-24 h-24
+								ransition ease-in-out delay-150 
+                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
 						options={options.SCISSORS}
 					/>
 				</div>
@@ -60,7 +62,9 @@ const Main = () => {
 								class='border-gradient-br-spock-gray-50 
                 				gradient-border-4 rounded-full flex justify-center 
 								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24'
+                   				lg:w-32 lg:h-32 w-24 h-24
+								ransition ease-in-out delay-150 
+                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
 								options={options.SPOCK}
 							/>
 						</div>
@@ -70,7 +74,9 @@ const Main = () => {
 								class='border-gradient-br-paper-gray-50 
                 				gradient-border-4 rounded-full flex justify-center 
 								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24'
+                   				lg:w-32 lg:h-32 w-24 h-24
+								ransition ease-in-out delay-150 
+                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
 							/>
 						</div>
 					</div>
@@ -84,7 +90,9 @@ const Main = () => {
 								class='border-gradient-br-lizard-gray-50 
                 				gradient-border-4 rounded-full flex justify-center 
 								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24'
+                   				lg:w-32 lg:h-32 w-24 h-24
+								ransition ease-in-out delay-150 
+                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
 							/>
 						</div>
 						<div>
@@ -93,7 +101,9 @@ const Main = () => {
 								class='border-gradient-br-rock-gray-50 
                 				gradient-border-4 rounded-full flex justify-center 
 								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24'
+                   				lg:w-32 lg:h-32 w-24 h-24
+								ransition ease-in-out delay-150 
+                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
 							/>
 						</div>
 					</div>

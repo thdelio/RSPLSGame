@@ -7,9 +7,9 @@ import GameTitle from '../../public/images/logo-bonus.svg';
 
 const Header = () => {
 	return (
-		<div class='flex justify-center pt-2 lg:p-8'>
+		<div class='flex justify-center pt-2 lg:p-10'>
 			<div
-				class='box-border rounded-lg max-h-full h-26 lg:h-40 w-full max-w-3xl 
+				class='box-border rounded-2xl max-h-full h-26 lg:h-40 w-full max-w-3xl 
 			p-4 border-2 xl:border-4 border-[#606e85]'
 			>
 				<div class='columns-2'>
