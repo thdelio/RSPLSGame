@@ -2,7 +2,7 @@
  *
  **/
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import OptionButton from '../OptionButton';
 import scissors from '../../public/images/icon-scissors.svg';
 import spock from '../../public/images/icon-spock.svg';
@@ -12,46 +12,58 @@ import rockIcon from '../../public/images/icon-rock.svg';
 /* import Pentagon from '../../public/images/bg-pentagon.svg'; */
 
 const Main = () => {
+	const [placerChoose, setPlayerChoose] = useState();
+	const [clicked, setClicked] = useState(false);
+	const [cpuChoose, setCpuChoose] = useState();
+
 	const options = {
 		ROCK: {
-			color: 'rock',
+			class:
+				'border-gradient-br-rock-gray-50 gradient-border-4 rounded-full flex justify-center inline-flex items-center shadow-2xl  shadow-inner box-container ransition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
 			value: 'R',
 			image: rockIcon,
 		},
 		SCISSORS: {
-			color: 'scissors',
+			class:
+				'border-gradient-br-scissors-gray-50 gradient-border-4 rounded-full flex justify-center inline-flex items-center shadow-2xl  shadow-inner box-container ransition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
 			value: 'SC',
 			image: scissors,
 		},
 		SPOCK: {
-			color: 'spock',
+			class:
+				'border-gradient-br-spock-gray-50 gradient-border-4 rounded-full flex justify-center inline-flex items-center shadow-2xl  shadow-inner box-container ransition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
 			value: 'SP',
 			image: spock,
 		},
 		PAPER: {
-			color: 'paper',
+			class:
+				'border-gradient-br-paper-gray-50 gradient-border-4 rounded-full flex justify-center inline-flex items-center shadow-2xl  shadow-inner box-container ransition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
 			value: 'P',
 			image: paper,
 		},
 		LIZARD: {
-			color: 'lizard',
+			class:
+				'border-gradient-br-lizard-gray-50 gradient-border-4 rounded-full flex justify-center inline-flex items-center shadow-2xl  shadow-inner box-container ransition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300',
 			value: 'L',
 			image: lizard,
 		},
 	};
+
+	useEffect(() => {
+		const value = Object.values(options);
+		setTimeout(function () {
+			setCpuChoose(value[Math.floor(Math.random() * value.length)]);
+		}, 3000);
+	}, [placerChoose]);
 
 	return (
 		<div class='flex justify-center p-14 lg:p-8'>
 			<div class='grid '>
 				<div class='grid-rows-1 '>
 					<OptionButton
-						class='border-gradient-br-scissors-gray-50 
-                				gradient-border-4 rounded-full flex justify-center inline-flex 
-								items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24
-								ransition ease-in-out delay-150 
-                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
 						options={options.SCISSORS}
+						setPlayerChoose={setPlayerChoose}
+						setClicked={setClicked}
 					/>
 				</div>
 
@@ -59,24 +71,16 @@ const Main = () => {
 					<div class='columns-2 flex space-x-32 lg:space-x-40'>
 						<div>
 							<OptionButton
-								class='border-gradient-br-spock-gray-50 
-                				gradient-border-4 rounded-full flex justify-center 
-								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24
-								ransition ease-in-out delay-150 
-                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
 								options={options.SPOCK}
+								setPlayerChoose={setPlayerChoose}
+								setClicked={setClicked}
 							/>
 						</div>
 						<div>
 							<OptionButton
 								options={options.PAPER}
-								class='border-gradient-br-paper-gray-50 
-                				gradient-border-4 rounded-full flex justify-center 
-								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24
-								ransition ease-in-out delay-150 
-                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
+								setPlayerChoose={setPlayerChoose}
+								setClicked={setClicked}
 							/>
 						</div>
 					</div>
@@ -87,23 +91,15 @@ const Main = () => {
 						<div>
 							<OptionButton
 								options={options.LIZARD}
-								class='border-gradient-br-lizard-gray-50 
-                				gradient-border-4 rounded-full flex justify-center 
-								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24
-								ransition ease-in-out delay-150 
-                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
+								setPlayerChoose={setPlayerChoose}
+								setClicked={setClicked}
 							/>
 						</div>
 						<div>
 							<OptionButton
 								options={options.ROCK}
-								class='border-gradient-br-rock-gray-50 
-                				gradient-border-4 rounded-full flex justify-center 
-								inline-flex items-center shadow-2xl  shadow-inner box-container 
-                   				lg:w-32 lg:h-32 w-24 h-24
-								ransition ease-in-out delay-150 
-                				hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
+								setPlayerChoose={setPlayerChoose}
+								setClicked={setClicked}
 							/>
 						</div>
 					</div>
