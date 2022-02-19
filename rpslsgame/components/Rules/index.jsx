@@ -58,7 +58,7 @@ const Rules = () => {
 	};
 
 	return (
-		<div class='flex justify-center lg:justify-end pt-20'>
+		<div class='flex justify-center lg:justify-end pt-20 lg:pt-0'>
 			<Modal />
 			<button
 				class='bg-transparent transition ease-in-out delay-150 

@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from 'react';
 import OptionButton from '../OptionButton';
+import WinnerPicker from '../WinnerPicker';
 import scissors from '../../public/images/icon-scissors.svg';
 import spock from '../../public/images/icon-spock.svg';
 import paper from '../../public/images/icon-paper.svg';
@@ -57,54 +58,58 @@ const Main = () => {
 	}, [placerChoose]);
 
 	return (
-		<div class='flex justify-center p-14 lg:p-8'>
-			<div class='grid '>
-				<div class='grid-rows-1 '>
-					<OptionButton
-						options={options.SCISSORS}
-						setPlayerChoose={setPlayerChoose}
-						setClicked={setClicked}
-					/>
-				</div>
+		<div class='flex justify-center pt-14 lg:p-0'>
+			{clicked ? (
+				<WinnerPicker setClicked={setClicked} placerChoose={placerChoose} />
+			) : (
+				<div class='grid '>
+					<div class='grid-rows-1 '>
+						<OptionButton
+							options={options.SCISSORS}
+							setPlayerChoose={setPlayerChoose}
+							setClicked={setClicked}
+						/>
+					</div>
 
-				<div class='grid-rows-2 '>
-					<div class='columns-2 flex space-x-32 lg:space-x-40'>
-						<div>
-							<OptionButton
-								options={options.SPOCK}
-								setPlayerChoose={setPlayerChoose}
-								setClicked={setClicked}
-							/>
+					<div class='grid-rows-2 '>
+						<div class='columns-2 flex space-x-32 lg:space-x-40'>
+							<div>
+								<OptionButton
+									options={options.SPOCK}
+									setPlayerChoose={setPlayerChoose}
+									setClicked={setClicked}
+								/>
+							</div>
+							<div>
+								<OptionButton
+									options={options.PAPER}
+									setPlayerChoose={setPlayerChoose}
+									setClicked={setClicked}
+								/>
+							</div>
 						</div>
-						<div>
-							<OptionButton
-								options={options.PAPER}
-								setPlayerChoose={setPlayerChoose}
-								setClicked={setClicked}
-							/>
+					</div>
+
+					<div class='grid-rows-3 lg:pt-8 pt-6 '>
+						<div class='columns-2 flex justify-around '>
+							<div>
+								<OptionButton
+									options={options.LIZARD}
+									setPlayerChoose={setPlayerChoose}
+									setClicked={setClicked}
+								/>
+							</div>
+							<div>
+								<OptionButton
+									options={options.ROCK}
+									setPlayerChoose={setPlayerChoose}
+									setClicked={setClicked}
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class='grid-rows-3 lg:pt-8 pt-6 '>
-					<div class='columns-2 flex justify-around '>
-						<div>
-							<OptionButton
-								options={options.LIZARD}
-								setPlayerChoose={setPlayerChoose}
-								setClicked={setClicked}
-							/>
-						</div>
-						<div>
-							<OptionButton
-								options={options.ROCK}
-								setPlayerChoose={setPlayerChoose}
-								setClicked={setClicked}
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
+			)}
 		</div>
 	);
 };
