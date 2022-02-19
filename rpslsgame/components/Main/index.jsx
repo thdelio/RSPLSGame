@@ -12,8 +12,9 @@ import lizard from '../../public/images/icon-lizard.svg';
 import rockIcon from '../../public/images/icon-rock.svg';
 /* import Pentagon from '../../public/images/bg-pentagon.svg'; */
 
-const Main = () => {
-	const [placerChoose, setPlayerChoose] = useState();
+const Main = (props) => {
+	const { setPlayerScore } = props;
+	const [playerChoose, setPlayerChoose] = useState();
 	const [clicked, setClicked] = useState(false);
 	const [cpuChoose, setCpuChoose] = useState();
 
@@ -55,19 +56,26 @@ const Main = () => {
 		setTimeout(function () {
 			setCpuChoose(value[Math.floor(Math.random() * value.length)]);
 		}, 3000);
-	}, [placerChoose]);
+	}, [playerChoose]);
 
 	return (
 		<div class='flex justify-center pt-14 lg:p-0'>
 			{clicked ? (
-				<WinnerPicker setClicked={setClicked} placerChoose={placerChoose} />
+				<WinnerPicker
+					setClicked={setClicked}
+					playerChoose={playerChoose}
+					cpuChoose={cpuChoose}
+					setCpuChoose={setCpuChoose}
+					setPlayerScore={setPlayerScore}
+				/>
 			) : (
-				<div class='grid '>
+				<div class='grid bg-pentagon bg-cover '>
 					<div class='grid-rows-1 '>
 						<OptionButton
 							options={options.SCISSORS}
 							setPlayerChoose={setPlayerChoose}
 							setClicked={setClicked}
+							setCpuChoose={setCpuChoose}
 						/>
 					</div>
 
@@ -78,6 +86,7 @@ const Main = () => {
 									options={options.SPOCK}
 									setPlayerChoose={setPlayerChoose}
 									setClicked={setClicked}
+									setCpuChoose={setCpuChoose}
 								/>
 							</div>
 							<div>
@@ -85,6 +94,7 @@ const Main = () => {
 									options={options.PAPER}
 									setPlayerChoose={setPlayerChoose}
 									setClicked={setClicked}
+									setCpuChoose={setCpuChoose}
 								/>
 							</div>
 						</div>
@@ -97,6 +107,7 @@ const Main = () => {
 									options={options.LIZARD}
 									setPlayerChoose={setPlayerChoose}
 									setClicked={setClicked}
+									setCpuChoose={setCpuChoose}
 								/>
 							</div>
 							<div>
@@ -104,6 +115,7 @@ const Main = () => {
 									options={options.ROCK}
 									setPlayerChoose={setPlayerChoose}
 									setClicked={setClicked}
+									setCpuChoose={setCpuChoose}
 								/>
 							</div>
 						</div>

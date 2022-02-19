@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
@@ -5,6 +7,7 @@ import Main from '../components/Main';
 import Rules from '../components/Rules';
 
 export default function Home() {
+	const [playerScore, setPlayerScore] = React.useState();
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -19,8 +22,8 @@ export default function Home() {
 				/>
 			</Head>
 			<main>
-				<Header />
-				<Main />
+				<Header setPlayerScore={setPlayerScore} playerScore={playerScore} />
+				<Main setPlayerScore={setPlayerScore} />
 				<Rules />
 			</main>
 		</div>

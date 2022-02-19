@@ -2,10 +2,23 @@
  *
  **/
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import GameTitle from '../../public/images/logo-bonus.svg';
 
-const Header = () => {
+const Header = (props) => {
+	const { playerScore, setPlayerScore } = props;
+
+	const score =
+		typeof window !== 'undefined'
+			? localStorage.getItem('Score')
+				? localStorage.getItem('Score')
+				: 0
+			: 0;
+
+	useEffect(() => {
+		setPlayerScore(score);
+	}, [score]);
+
 	return (
 		<div class='flex justify-center pt-2 lg:p-10'>
 			<div
@@ -29,7 +42,7 @@ const Header = () => {
 								class='flex font-Barlow-Semi-Condensed font-bold lg:text-6xl 
 							text-4xl justify-center row-span-1 text-[#3b4363]'
 							>
-								12
+								{playerScore}
 							</div>
 						</div>
 					</div>

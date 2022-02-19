@@ -5,7 +5,7 @@
 import React from 'react';
 
 const OptionButton = (props) => {
-	const { options, setPlayerChoose, setClicked } = props;
+	const { options, setPlayerChoose, setClicked, setCpuChoose } = props;
 
 	return (
 		<div class='flex justify-center'>
@@ -14,6 +14,7 @@ const OptionButton = (props) => {
 				onClick={() => {
 					setPlayerChoose(options);
 					setClicked(true);
+					setCpuChoose(undefined);
 				}}
 			>
 				<img src={options.image} class=' lg:w-14 lg:h-14 h-10 w-10' />

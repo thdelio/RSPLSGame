@@ -8,6 +8,9 @@ module.exports = {
 			fontFamily: {
 				'Barlow-Semi-Condensed': ['"Barlow Semi Condensed"', 'cursive'],
 			},
+			backgroundImage: {
+				pentagon: "url('/images/bg-pentagon.svg')",
+			},
 		},
 		linearBorderGradients: {
 			directions: {

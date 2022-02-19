@@ -2,7 +2,7 @@
  *
  **/
 
-export const WinnerPicker = (playerChoose, cpuChoose) => {
+export const WinnerPickerFunction = (playerChoose, cpuChoose) => {
 	const results = {
 		scissors: 'SC',
 		spock: 'SP',
@@ -103,7 +103,7 @@ export const WinnerPicker = (playerChoose, cpuChoose) => {
 		return results.loss;
 	} else if (
 		playerChoose.value == results.spock &&
-		cpuChoose.value == results.spock
+		cpuChoose.value == results.scissors
 	) {
 		return results.win;
 	} else if (
